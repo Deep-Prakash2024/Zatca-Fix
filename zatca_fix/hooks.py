@@ -58,6 +58,9 @@ app_license = "mit"
 
 # application home page (will override Website Settings)
 # home_page = "login"
+override_whitelisted_methods = {
+    "zatca_erpgulf.zatca_erpgulf.create_invoice.create_csr": "zatca_fix.overrides.create_csr.create_csr"
+}
 
 # website user home page (by Role)
 # role_home_page = {
