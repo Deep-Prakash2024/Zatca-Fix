@@ -1,10 +1,11 @@
+
 [project]
 name = "zatca_fix"
 authors = [
     { name = "deep.prakash@nestorbird.com", email = "deep.prakash@nestorbird.com"}
 ]
 description = "Zatca Fix"
-requires-python = ">=3.14"
+requires-python = ">=3.10"
 readme = "README.md"
 dynamic = ["version"]
 dependencies = [

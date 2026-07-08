@@ -6,17 +6,20 @@ from cryptography import x509
 from cryptography.hazmat.backends import default_backend
 from cryptography.hazmat.primitives import serialization, hashes
 from cryptography.hazmat.bindings._rust import ObjectIdentifier
-from zatca_erpgulf.zatca_erpgulf.create_invoice import (
+# from zatca_erpgulf.zatca_erpgulf.sign_invoice_first import get_csr_data_multiple
+from zatca_erpgulf.zatca_erpgulf.sign_invoice_first import (
     get_csr_data_multiple,
     get_csr_data,
     create_private_keys,
     encode_customoid,
 )
 
+
 @frappe.whitelist(allow_guest=False)
 def create_csr(zatca_doc: dict | str, portal_type: str, company_abbr: str):
     """Custom override: treat Simulation same as Production for OID"""
     try:
+        
         if isinstance(zatca_doc, str):
             zatca_doc = json.loads(zatca_doc)
         if (
